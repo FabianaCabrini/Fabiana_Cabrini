@@ -24,7 +24,9 @@
   
 </div>
 
-![Snake animation](https://raw.githubusercontent.com/FabianaCabrini/FabianaCabrini/output/dist/snake.svg)
+### 🐍 Minhas contribuições
+
+<img src="https://raw.githubusercontent.com/FabianaCabrini/FabianaCabrini/output/dist/snake.svg" alt="Snake animation" width="800" />
 
 
 
