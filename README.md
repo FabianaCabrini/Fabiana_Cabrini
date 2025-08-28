@@ -24,6 +24,7 @@
   
 </div>
 
-<img src="https://github.com/FabianaCabrini/FabianaCabrini/blob/output/snake.svg" alt="Snake animation" width="100%" />
+![Snake animation](https://github.com/FabianaCabrini/FabianaCabrini/blob/output/snake.svg)
+
 
 
