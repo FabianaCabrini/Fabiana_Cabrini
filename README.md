@@ -26,6 +26,68 @@
 
 ### 🐍 Minhas contribuições
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cobrinha</title>
+<style>
+  canvas { background: #000; display: block; margin: auto; }
+</style>
+</head>
+<body>
+<canvas id="snake" width="400" height="400"></canvas>
+<script>
+const canvas = document.getElementById("snake");
+const ctx = canvas.getContext("2d");
+
+let grid = 20;
+let count = 0;
+let snake = [{x:160, y:160}];
+let dx = grid;
+let dy = 0;
+let food = {x:320, y:320};
+
+function gameLoop() {
+  requestAnimationFrame(gameLoop);
+  if (++count < 4) return;
+  count = 0;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  
+  // Mover a cobra
+  let head = {x: snake[0].x + dx, y: snake[0].y + dy};
+  snake.unshift(head);
+  
+  // Comer comida
+  if (head.x === food.x && head.y === food.y) {
+    food.x = Math.floor(Math.random()*20)*grid;
+    food.y = Math.floor(Math.random()*20)*grid;
+  } else {
+    snake.pop();
+  }
+
+  // Desenhar comida
+  ctx.fillStyle = "red";
+  ctx.fillRect(food.x, food.y, grid-1, grid-1);
+  
+  // Desenhar cobra
+  ctx.fillStyle = "lime";
+  snake.forEach(part => ctx.fillRect(part.x, part.y, grid-1, grid-1));
+}
+
+// Controles
+document.addEventListener("keydown", e => {
+  if (e.key === "ArrowUp" && dy === 0) { dx = 0; dy = -grid; }
+  if (e.key === "ArrowDown" && dy === 0) { dx = 0; dy = grid; }
+  if (e.key === "ArrowLeft" && dx === 0) { dx = -grid; dy = 0; }
+  if (e.key === "ArrowRight" && dx === 0) { dx = grid; dy = 0; }
+});
+
+requestAnimationFrame(gameLoop);
+</script>
+</body>
+</html>
+
 <img src="https://raw.githubusercontent.com/FabianaCabrini/FabianaCabrini/output/dist/snake.svg" alt="Snake animation" style="max-width:100%; height:auto;">
 
 
