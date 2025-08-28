@@ -25,7 +25,7 @@
 </div>
 
 ### 🐍 Minhas contribuições
-<div>
+<div align=center>
   <img src="https://raw.githubusercontent.com/FabianaCabrini/Fabiana_Cabrini/output/dist/snake.svg" alt="Snake animation" style="max-width:100%; height:auto;">
 </div>
 
